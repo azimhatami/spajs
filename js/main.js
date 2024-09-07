@@ -5,15 +5,15 @@ function router(params) {
   const routes = [
     {
       path: '/',
-      view: () => console.log('dashboard page')
+      view: () => 'dashboard page'
     },
     {
       path: '/products',
-      view: () => console.log('products page')
+      view: () => 'products page'
     },
     {
       path: '/posts',
-      view: () => console.log('posts page')
+      view: () => 'posts page'
     },
   ];
   
@@ -39,7 +39,21 @@ function router(params) {
 
 }
 
+// push user to new url
+function navigateTo(url) {
+  history.pushState(null, null, url);
+  router();
+}
+
+window.addEventListener('popstate', router)
+
 document.addEventListener('DOMContentLoaded', () => {
+  document.body.addEventListener('click', (event) => {
+    if (event.target.hasAttribute('data-link')) {
+      event.preventDefault();
+      navigateTo(event.target.href);
+    }
+  });
   router();
 })
 
