@@ -1,3 +1,8 @@
+import { Dashboard } from "./pages/Dashboard.js";
+import Products from "./pages/Products.js";
+import Posts from "./pages/Posts.js";
+
+
 const sidebar = document.getElementById("sidebar");
 const showBtn = document.querySelector('#btn')
 
@@ -5,15 +10,15 @@ function router(params) {
   const routes = [
     {
       path: '/',
-      view: () => 'dashboard page'
+      view: Dashboard
     },
     {
       path: '/products',
-      view: () => 'products page'
+      view: Products
     },
     {
       path: '/posts',
-      view: () => 'posts page'
+      view: Posts
     },
   ];
   
@@ -35,7 +40,7 @@ function router(params) {
       isMatch: true
     };
   }
-  console.log(match.route.view());
+  document.querySelector('#app').innerHTML = match.route.view();
 
 }
 
