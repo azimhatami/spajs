@@ -1,2 +1,8 @@
-import '../style/style.css'
-import javascriptLogo from '../public/javascript.svg'
+const sidebar = document.getElementById("sidebar");
+const showBtn = document.querySelector('#btn')
+
+showBtn.addEventListener('click', toggleSidebar);
+
+function toggleSidebar() {
+  sidebar.classList.toggle('show');
+}
