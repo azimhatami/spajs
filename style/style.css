@@ -1,9 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700");
 
 :root {
-  --secondaryColor: #ede9fe;
-  --mainRed: #db2727;
-  --mainBlack: #222;
+  --darkColor: #272a37;
+  --blueColor: #1d90f6;
 }
 
 * {
@@ -22,7 +21,7 @@ body {
 
 nav {
   grid-area: navbar;
-  background-color: blue;
+  background-color: var(--darkColor);
   color: white;
   font-weight: bold;
   font-size: 1.5rem;
@@ -40,27 +39,29 @@ nav {
   font-weight: bold;
   font-size: 1.2rem;
   border-radius: 8px;
-  border: 2px solid white;
-  background-color: blue;
-  color: white;
+  border: 2px solid var(--blueColor);
+  background-color: var(--darkColor);
+  color: var(--blueColor);
   outline: none;
   cursor: pointer;
 }
 
 #btn:hover {
-  background-color: white;
-  color: blue;
+  background-color: var(--blueColor);
+  color: white;
   transition: all 0.3s ease-out;
 }
 
 aside {
   grid-area: sidbar;
-  background-color: #6d28d9;
+  background-color: var(--darkColor);
   width: 15rem;
   height: calc(100vh - 64px);
   position: sticky;
   top: 64px;
   align-self: start;
+  border-radius: 0 4rem 0 0;
+  padding: 0px 1rem;
 }
 
 main {
@@ -83,23 +84,33 @@ p {
   letter-spacing: 0.5px;
 }
 
+h2 {
+  text-align: center;
+  margin-top: 3rem;
+  color: #7c7c7c;
+  font-weight: bold;
+  font-size: 2.5rem;
+  border-bottom: 2px solid var(--blueColor);
+  padding-bottom: 3rem;
+}
+
 ul {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  padding-top: 2rem;
+  padding-top: 6rem;
 }
 
 ul li {
   list-style-type: none;
-  background-color: white;
   width: 100%;
   height: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 1rem;
+  border: 2px solid var(--blueColor);
 }
 
 .nav_link {

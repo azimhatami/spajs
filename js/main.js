@@ -1,6 +1,7 @@
 import { Dashboard } from "./pages/Dashboard.js";
 import Products from "./pages/Products.js";
 import Posts from "./pages/Posts.js";
+import NotFound from "./pages/NotFound.js";
 
 
 const sidebar = document.getElementById("sidebar");
@@ -35,7 +36,7 @@ function router(params) {
     match = {
       route : { 
         path: '/not-found', 
-        view: () => console.log('not-found page')
+        view: NotFound
       },
       isMatch: true
     };
